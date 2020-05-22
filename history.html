@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container mt-5 p-4 rounded-lg shadow text-center history-background">
+        <h1>Search History</h1>
+        <button id="delete-all" class="btn btn-secondary">Delete All</button>
+        <div id="container">
+        </div>
+        <a href="./index.html" class="historylink">Return To Main Page</a>
+    </div>
+    <script src="./js/SearchResults.js"></script>
+    <script src="./js/history.js"></script>
+    <script>
+        const history= new History(document.getElementById("container"));
+        history.load();
+        document.getElementById("delete-all").addEventListener("click",()=>{
+            history.deleteall()
+        })
+    </script>
+</body>
+</html>
